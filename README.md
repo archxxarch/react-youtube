@@ -4,7 +4,6 @@
 조회수가 높은 순으로 보고 싶다면
 좋아요가 많은 순으로 보고 싶다면
 
-
 ## 완성작 보기
 미리보기 :
 
@@ -12,3 +11,4 @@
 
 ## 라이브러리 설치
 sass를 설치 : `npm install sass`
+react-router-dom 설치 : `npm install react-router-dom`
