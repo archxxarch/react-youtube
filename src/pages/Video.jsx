@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { fetchFromAPI } from '../utils/api';
 import ReactPlayer from 'react-player';
+
+import { BiLike } from "react-icons/bi";
+import { FaRegCommentDots } from "react-icons/fa6";
+import { BsEyeglasses } from "react-icons/bs";
 
 const Video = () => {
     const { videoId } = useParams();
@@ -33,14 +37,17 @@ const Video = () => {
                             {videoDetail.snippet.title}
                         </h2>
                         <div className='video__channel'>
-                            <div className='id'>{videoDetail.snippet.channelTitle}</div>
+                            <div className='id'>
+                                <Link to={`/channel/${videoDetail.snippet.channelId}`}>{videoDetail.snippet.channelTitle}</Link>
+                            </div>
                             <div className='count'>
-                                <span className='view'>{videoDetail.statistics.viewCount}</span><br />
-                                <span className='like'>{videoDetail.statistics.likeCount}</span><br />
-                                <span className='comment'>{videoDetail.statistics.commentCount}</span><br />
+                                <span className='view'>< BsEyeglasses/>{videoDetail.statistics.viewCount}</span>
+                                <span className='like'>< BiLike />{videoDetail.statistics.likeCount}</span>
+                                <span className='comment'>< FaRegCommentDots />{videoDetail.statistics.commentCount}</span>
                             </div>
                         </div>
                     </div>
+                    <div className="video__desc">{videoDetail.snippet.description}</div>
                 </div>
             )}
         </section>

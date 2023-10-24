@@ -1,0 +1,58 @@
+#channel {
+    padding: 0;
+}
+.channel__inner {
+    text-align: center;
+
+    .title {
+        margin-top: 70px;
+        font-size: 30px;
+        font-weight: 800;
+    }
+    .desc {
+        margin-top: 20px;
+        font-size: 15px;
+        color: var(--black400);
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .info {
+        margin-top: 50px;
+        span {
+            background-color: var(--black400);
+            color: var(--white);
+            border-radius: 20px;
+            margin-left: 10px;
+            padding: 10px 15px;
+        }
+        svg {
+            color: var(--white);
+            width: 20px;
+            height: 20px;
+            vertical-align: -5px;
+            margin-right: 5px;
+        }
+    }
+
+    .channel__header {
+        width: 100%;
+        height: 300px;
+        position: relative;
+        background-position: center;
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 100;
+        }
+    }
+    .channel__info {}
+    .channel__video {}
+    .channel__more {}
+}
