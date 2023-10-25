@@ -11,13 +11,11 @@
             border: 2px solid var(--white);
             position: relative;
             animation: logo 10s 10s ease-in-out infinite;
-
             @keyframes logo {
                 0% {transform: rotate(0deg); border-radius: 50px;}
                 50% {transform: rotate(720deg); border-radius: 50px; background-color: var(--black200);}
                 100% {transform: rotate(0deg); border-radius: 50px;}
             } 
-
             svg {
                 position: absolute;
                 left: 8px;
@@ -39,11 +37,13 @@
 
 .header__menu {
     padding: 10px;
-
+    border-bottom: 1px solid var(--black500);
     .menu {
-
+        border-bottom: 1px solid var(--black500);
+        margin-bottom: 20px;
         li {
             margin-bottom: 10px;
+
             a {
                 font-size: 1rem;
                 display: block;
@@ -53,12 +53,9 @@
                 border-radius: 40px;
                 position: relative;
                 transition: background-color 0.1s;
-                // border: 1px solid transparent;
-
                 &:hover {
                     background-color: var(--black300);
                 }
-
                 svg {
                     width: 1.25rem;
                     height: 1.25rem;
@@ -67,18 +64,15 @@
                     top: 0.8rem;
                 }
             }
-
             &.active {
                 a {
                     background-color: var(--black300);
-                    // border: 1px solid var(--black500);
                 }
             }
         }
     }
     .keyword {
         li {
-
             a {
                 font-size: 0.7rem;
                 background-color: var(--white400);
@@ -96,14 +90,12 @@
                 margin: 4px;
                 transition: background-color 0.05s;
                 text-align: center;
-
                 &:hover {
                     background-color: var(--black400);
                     color: var(--white);
                 }
             }
         }
-
         svg {
             position: absolute;
             left: 10px;
@@ -112,7 +104,6 @@
             height: 20px;
             display: none;
         }
-        
     }
 }
 
@@ -125,7 +116,6 @@
     text-align: center;
     padding: 15px 0 15x;
     background-color: var(--black500);
-
     li {
         display: inline-block;
         a {

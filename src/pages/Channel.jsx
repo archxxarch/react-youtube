@@ -5,16 +5,22 @@ import { fetchFromAPI } from '../utils/api';
 import { MdSlowMotionVideo } from "react-icons/md";
 import { HiOutlineDocumentDuplicate } from "react-icons/hi";
 import { AiOutlineYoutube } from "react-icons/ai";
+import VideoSearch from '../components/video/VideoSearch';
 
 const Channel = () => {
     const { channelId } = useParams();
     const [channelDetail, setChannelDetail] = useState();
+    const [ channelVideo, setChannelVideo ] = useState([]);
 
     useEffect(() => {
         const fetchResults = async () => {
             try {
                 const data = await fetchFromAPI(`channels?part=snippet&id=${channelId}`);
                 setChannelDetail(data.items[0]);
+
+                const videosData = await fetchFromAPI(`search?channelId=${channelId}&part=snippet&order=date`);
+                console.log(videosData);
+                setChannelVideo(videosData.items);
 
             } catch (error) {
                 console.log('Error fetching data', error);
@@ -42,7 +48,9 @@ const Channel = () => {
                             <span>< MdSlowMotionVideo/>{channelDetail.statistics.viewCount}</span>
                         </div>
                     </div>
-                    <div className='channel__video video__inner'></div>
+                    <div className='channel__video video__inner'>
+                        <VideoSearch videos={channelVideo} />
+                    </div>
                     <div className='channel__more'></div>
                 </div>
             )}
